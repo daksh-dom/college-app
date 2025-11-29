@@ -1,0 +1,156 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PU ID CARD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 25px;
+        font-family: Arial, sans-serif;
+    }
+
+    .id-card {
+        width: 420px;
+        border: 3px solid #000;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    /* Header red strip */
+    .header {
+        background: #b00000;
+        color: #fff;
+        padding: 6px 10px 5px;
+        font-size: 13px;
+        line-height: 1.3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header span.temp {
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+    .sub-text {
+        font-size: 12px;
+        margin: 2px 0 0;
+    }
+
+    /* White body */
+    .body {
+        padding: 12px;
+        font-size: 13.5px;
+        color: #000;
+    }
+
+    /* Enrollment No */
+    .enroll {
+        font-weight: bold;
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+
+    /* Photo + Details Layout */
+    .profile-row {
+        display: flex;
+        gap: 12px;
+    }
+
+    .pho img {
+        width: 110px;
+        height: 140px;
+        object-fit: cover;
+        border: 1.5px solid #000;
+    }
+
+    /* Details Section */
+    .details p {
+        margin: 3px 0;
+    }
+
+    .label {
+        color: #b00000;
+        font-weight: bold;
+    }
+
+    /* Barcode */
+    .barcode {
+        padding: 0 150px;
+         
+        height: 35px;
+        margin-top: 0px;
+        background: url(' data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAACUCAMAAABV5TcGAAAAY1BMVEX///8AAAAgICAfHx/19fXt7e3k5ORPT08aGhrg4OATExMYGBj6+vrLy8uFhYXAwMBmZmZJSUnV1dVwcHCNjY2srKy3t7coKCh3d3c0NDQKCgpfX19aWlqjo6NBQUEtLS2Xl5cQqQzGAAAEJklEQVR4nO2ci46jOBBFy2DjGMz7EYKB8P9fOWXy3FFHOyvN9AJzj9StmKZczk254qSlSwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbFcWedqrtNRaZ0Y1LV9b+HG5yEbPESmXUpZROltq/T3OjrqWmf8rs1DV58S/fERq+jJT1BWRKirqG0vO3zOZWU9SGzXzoMipyyRR7ufqTadLDm9a29VRVKRU+YjZZrqUrbslrKXqFyK1LmpSU1lXnC+lZrJtHdG6jF66sqeyI31blBkNUeQfu9wU/FQ4aVTVqW1aqTI/UW6/lENO4tLlWuUijsVYqZoz28wPMlkLYUidc3KOciFp4cvD2YailEXPf+Wbekp5EZRqP8jNKIqIpjlS55R0Yek68OXGCJ5MVMqHX1tqnSLq1nymjQXrXy+Wg6JrTmngI6wTQi7nNaGYpRozfnK9HzSqEXPK+XKqG7mUhmofoGUgShITiWFdVBVXRIYHnK+aRS9pciadO1svPJufqPsox9zlI8sRBIOr1heC5QgCL8fg5eBFFsUqxySC8HS154Hl8GL5m3hlXo4x5kFu3EOOa0pjb+mShIGXI2lWOYIwuTzl4ABn2uAhRxlFF5bjfOIIWwwsx3VNGJdPOTjCy1E+5OAqNtRzQKzlWWjiqeITR/RkTqscp4DzsRxcjlNh+IVb5XADT/TvcoRvcoS/IkcYvsnBg7fqeMkR/kY5wn/KIe9yhO9yhO9yhF/LEf6KHP+9Or5bjg/VATn2UR1f9A5UxzGqY3etdPPV8b2bZfO9A+8s6B2fe8cf3ix76x1Hqo7dybH56sA7y2GrY3fHMFQHegd6xyaqA71j35tl870Dp9LD9o7dyYFPtKgO9I6j9I4jnUp3dwzbfHWgd+BUiurYpBz4RLuvzXKkN1psln3LsfljGD7CHbY6dicHqmNf1XGkQ/rujmGbrw70DpxK/47qQO/Y92bZfO/AuQO9A70DvWP7m2Xz1XGk3rG7zbL5b8PwTTp6x1Y2C6pjX9VxpHeW3f1jAdWB3oHesYnq2H7v+JbquPw/p9Lwj5xKk98hhze7OSVvZjfJycvxNLsp7mY3p2Q42+BhdsMRDzm0SJKfzG7G2tI1Tlazm+FudpO8md1wwGja05scq9lNzKltIYRszreEL7MbzveT2Y2XI+aJXmY3PBqeZjdrvpfZTfkwu+EUH+SwXVnfrJCcG19WSM7pSTZjebdCam5WSHzZFbYYb1ZII0c8rZB4oNMo042irlbeCilbLBUcME5mHlcrJJ+iflghaZ8vyp2+WSG1vbpZITGz5cyyLajzN9VSZZO3QhrXRU36zQqpj2jxKXrJP94KaXTrom5WSH6BRW5qfbdC6u9WSHz9kxUSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwN/FD/Sm9qBCDlB6AAAAAElFTkSuQmCC') no-repeat center;
+        background-size: contain;
+    }
+
+    .bottom-no {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 3px;
+    }
+    .temp {
+        font-size: 16px;
+        font-weight: bold;
+        color: yellow;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="id-card">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div>
+            Parul University | NAAC@++<br>
+            <span class="sub-text">P.O. Limda. Ta. Waghodia. Dist. Vadodara-391760.</span>
+        </div>
+        <span class="temp">TEMPORARY</span>
+    </div>
+
+    <!-- BODY -->
+    <div class="body">
+        
+        <div class="enroll">25UG035857</div>
+
+        <div class="profile-row">
+
+            <!-- Photo -->
+            <div class="pho">
+                <img src="d.JPG" alt="Student Photo">
+            </div>
+
+            <!-- Details -->
+            <div class="details">
+                <p><span class="label">Name:</span> PATEL DAKSH NIKHILBHAI</p>
+                <p><span class="label">Department:</span> AIML</p>
+                <p><span class="label">Faculty:</span> FACULTY OF ENGG. & TECH.</p>
+                <p><span class="label">Institute:</span> PIET</p>
+                <p><span class="label">Birth Date:</span> 08-03-2008 <span class="label">Blood Gr.:</span> A+</p>
+                <p><span class="label">Contact No.:</span> 6356886069</p>
+            </div>
+
+        </div>
+
+        <!-- BARCODE IMAGE (temporary placeholder) -->
+        <div class="barcode"></div>
+        <div class="bottom-no">25UG035857 <span class="label">Student Sign.</span></div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

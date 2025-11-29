@@ -1,0 +1,132 @@
+.app {
+  max-width: 420px;     
+  margin: 28px auto;    
+   
+  box-sizing: border-box;
+  border: 5px solid #000;
+  border-radius: 20px;
+}
+
+/* page background */
+body {
+  margin: 0px;
+  font-family: 'Poppins', sans-serif;
+  background: #f2f2f2;
+}
+
+/* Top Section (black header card) */
+.header {
+  background: #000;
+  color: white;
+  padding: 20px 20px 22px;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+ 
+
+/* small text at top-left */
+.top-label {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+/* profile row */
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0px;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* name + email */
+.name {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffd65a;
+}
+
+.email {
+  font-size: 12.5px;
+  color: #dcdcdc;
+  margin-top: 4px;
+}
+
+/* info rows */
+.info {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  font-size: 12.5px;
+  color: #d0d0d0;
+}
+
+.info-item {
+  flex: 1 1 48%;
+}
+
+/* white panel under header */
+.panel {
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.325);
+}
+
+/* grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 8px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(20,20,20,0.04);
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.692);
+}
+
+.card img {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 8px;
+}
+
+.card div {
+  font-size: 13px;
+  color: #222;
+}
+
+/* version text */
+.version {
+  text-align: center;
+  margin: 20px 0 26px;
+  color: #777;
+  font-size: 13px;
+}
+
+/* responsive tweaks */
+@media (max-width: 460px) {
+  .app { margin: 12px; max-width: 100%; }
+}
